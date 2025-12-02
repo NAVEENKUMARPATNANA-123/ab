@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="us()">  click here</button>
+    
+    <script>
+    function us(){
+        const url = `https://api.github.com/users/NAVEENKUMARPATNANA-123`;
+
+        fetch(url).then((data)=>{
+            const val=data.json();
+            console.log(val);
+            return val;
+            
+        })
+        .then((val)=>{
+            console.log("User data is fetched",val);
+        })
+        .catch(function (err){
+            console.log(err);
+    })
+}
+    </script>
+</body>
+</html>

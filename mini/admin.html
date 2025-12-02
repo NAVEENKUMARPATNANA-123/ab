@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+            document.getElementById("output").innerHTML=`Welcome admin`;
+            
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <form action="" id="loginform">
+            <label for="user">Enter user id</label>
+            <input type="text" name="user" id="user" placeholder="Enter user id">
+            <br>
+            <label for="password">Enter user password</label>
+            <input type="text" name="password" id="password" placeholder="Enter password">
+            <br>
+            <!-- fixed typo: valiadate -> validate -->
+            <button type="button" onclick="validate()">Login</button>
+        </form>
+        <br>
+    </div>
+    <p id="output"></p>
+
+    <script>
+        function validate(){
+            let user = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
+
+            if (user !== "" && password !== "") {
+                user = user.toLowerCase();
+
+                if (user === "admin" && password === "123") {
+                    window.location.href = "admin.html";
+                }
+
+                if (user === "user1" && password === "567") {
+                    document.getElementById("output").innerHTML =
+                    `<h3>Welcome, ${user}!</h3>
+                    <label>Your product 1 price: 25</label>
+                    <button type="button" id="button1" onclick="inc(25, 'button1')">0</button><br><br>
+                    
+                    <label>Your product 2 price: 50</label>
+                    <button type="button" id="button2" onclick="inc(50,'button2')">0</button><br><br>
+                    
+                    <label>Your product 3 price: 100</label>
+                    <button type="button" id="button3" onclick="inc(100,'button3')">0</button><br><br>
+        
+                    <button type="button" onclick="submitDetails()">Submit Details</button>`;
+                }
+            }
+        }
+
+        // store prices
+        let cart = [];
+
+        function inc(product, buttonId){
+            let btn = document.getElementById(buttonId);
+            let value = Number(btn.innerText); 
+            value++;
+            btn.innerText = value;
+            cart.push(product); // add product price each time
+        }
+
+        function submitDetails(){
+            let total_price = 0;
+            for (let i of cart) {
+                total_price += i;
+            }
+            alert(`Total price is ${total_price}`);
+        }
+    </script>
+</body>
+</html>

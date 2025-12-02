@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="inc" onclick="incc()">inc</button>
+    <button type="button" id="dec" onclick="decc()">dec</button>
+    <script>
+        function counter(){
+        let count=0;
+        function inc(){
+            count++;
+            return count;
+        }
+        function dec(){
+            count--;
+            return count;
+        }
+        return {inc,dec};
+    }  
+    
+    const counter1 =counter();
+    function incc(){
+        const a=counter1.inc();
+        console.log(`Increment is ${a}`);
+    }
+    function decc(){
+        const b=counter1.dec();
+        console.log(`Decrement is ${b}`);
+    }
+    </script>
+</body>
+</html>
+
+
+

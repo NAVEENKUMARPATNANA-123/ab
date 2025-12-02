@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="button" onclick="validate()"> Click here</button>
+    <p id="output"> </p>
+
+    <script>
+       const user = {
+    name: "Charlie",
+    age: 28,
+    premium: true
+  };
+
+        function validate(){
+            document.getElementById("output").innerHTML=`
+             <div class="card">
+      <h2>${user.name}</h2>
+      <p>Age: ${user.age}</p>
+      <p>Status: ${user.premium ? " Premium User" : "Free User"}</p>
+    </div>
+  `;
+        }
+        
+    </script>
+</body>
+</html>
+

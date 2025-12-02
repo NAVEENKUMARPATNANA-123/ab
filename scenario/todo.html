@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="form">
+        <label for="">Enter task</label>
+        <input type="text" id="task" placeholder="Enter task">
+        <br>
+        <label for="">Enter status</label>
+        <input type="text" id="status" placeholder="Enter status">
+        <br>
+        <button type="button" onclick="validate()"> submit</button>
+        <p id="output"></p>
+    </form>
+    <script>
+        let arr=[];
+        function validate(){
+            const task=document.getElementById("task").value;
+            const status=document.getElementById("status").value;
+            arr.push([task,status]);
+            document.getElementById("output").innerHTML=`Avaiable tasks ${arr}`;
+        }
+    </script>
+</body>
+</html>

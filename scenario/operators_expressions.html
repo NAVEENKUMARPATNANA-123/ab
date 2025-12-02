@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="profileForm">
+    <label>Name: </label>
+    <input type="text" id="name" required placeholder="name"><br><br>
+    <label>1st item price: </label>
+    <input type="number" id="item1price" required placeholder=" 1st item price"><br><br>
+    <label>2nd item price: </label>
+    <input type="number" id="item2price" required placeholder=" 2nd item price"><br><br>
+    <label>3rd item price: </label>
+    <input type="number" id="item3price" required placeholder=" 3rd item price"><br><br>
+    <button type="button" onclick="saveProfile()">Submit</button>
+  </form>
+  <p id="output">Final price</p>
+  <script >
+    function saveProfile(){
+        let name=document.getElementById("name").value;
+        let price1=document.getElementById("item1price").value;
+        let price2=document.getElementById("item2price").value;
+        let price3=document.getElementById("item3price").value;
+        price1=Number(price1);
+        price2=Number(price2);
+        price3=Number(price3);
+        let total_price=price1+price2+price3;
+        let discount_price=total_price-(total_price*0.1);
+        console.log(`Discount price is  ${discount_price}`);
+        document.getElementById("output").innerHTML=`Total price is ${total_price} \n Discount price is  ${discount_price}`;
+    }
+  </script>
+</body>
+</html>

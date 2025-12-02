@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="profileForm">
+    <label>Name: </label>
+    <input type="text" id="name" required placeholder="name"><br><br>
+    <label>Age: </label>
+    <input type="number" id="age" required placeholder="age"><br><br>
+    <button type="button" onclick="saveProfile()">Submit</button>
+  </form>
+  <p id="output"> </p>
+  <script >
+    function saveProfile(){
+        let name=document.getElementById("name").value;
+        let age=document.getElementById("age").value;
+        console.log(`Hello ${name}`);
+        document.getElementById("output").innerHTML=`Hello ${name}- Age is ${age}`;
+    }
+  </script>
+</body>
+</html>
