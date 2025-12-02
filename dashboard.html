@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <label for="" > enter</label>
+        <input type="text" id="number" placeholder="Enter a number"> <br><br>
+        <button type="button" onclick="dashboard()"> submit</button>
+        <br>
+        <p id="output"></p>
+        
+        <script>
+            function dashboard(){
+                let num=document.getElementById("number").value;
+            num=Number(num);
+            if (num==1){
+                 window.location.href = "operators.html";
+            }
+            else if (num==2){
+                window.location.href = "conversion.html";
+            }
+            }
+        </script>
+    </form>
+</body>
+</html>

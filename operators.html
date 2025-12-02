@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form id="Form">
+    <label>Name: </label>
+    <input type="text" id="name" required placeholder="name"><br><br>
+    
+    <label>Price1: </label>
+    <input type="text" id="price1" placeholder="Enter price 1" placeholder="price"><br><br>
+    <label>Price2: </label>
+    <input type="text" id="price2" placeholder="Enter price 2" placeholder="price"><br><br>
+    <label>Price3: </label>
+    <input type="text" id="price3" placeholder="Enter price 3" placeholder="price"><br><br>
+
+    <button type="button" onclick="finalprice()">Submit</button>
+  </form>
+  <p id="output">Final price</p>
+  <script >
+    function finalprice(){
+        let price1=document.getElementById("price1").value;
+        let price2=document.getElementById("price2").value;
+        let price3=document.getElementById("price3").value;
+        let total=Number(price1)+Number(price2)+Number(price3);
+        document.getElementById("output").innerHTML=`Total price is ${total}`;
+
+    }
+  </script>
+</body>
+</html>

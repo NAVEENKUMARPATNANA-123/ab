@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="Form">
+    
+    <label>Price: </label>
+    <input type="text" id="price" placeholder="Enter price" placeholder="price"><br><br>
+
+    <button type="button" onclick="conversion()">discount</button>
+  </form>
+  <p id="output"></p>
+  <script >
+    function conversion(){
+        let price=document.getElementById("price").value;
+        const discount=0.1;
+        price=Number(price);
+        let finalprice=price-(price*discount);
+        document.getElementById("output").innerHTML=`Final price : ${finalprice}`;
+        alert("final price is:"+finalprice);
+    }
+  </script>
+</body>
+</html>

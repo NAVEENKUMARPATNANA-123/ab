@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="abc()"> button</button>
+    <p id="aaa"></p>
+    <script>
+        function abc(){
+    let products = [
+  { id: 1, name: "Laptop", price: 1200 },
+  { id: 2, name: "Phone", price: 800 },
+  { id: 3, name: "Headphones", price: 150 }
+];
+let output=[];
+for (let product of products) {
+
+  output.push(`${product.id}: ${product.name} - $${product.price}`);
+}
+document.getElementById("aaa").innerHTML=output;
+}
+    </script>
+</body>
+</html>
